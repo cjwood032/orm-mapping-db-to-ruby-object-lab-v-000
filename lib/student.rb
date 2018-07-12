@@ -48,11 +48,16 @@ class Student
   end
 
   def self.count_all_students_in_grade_9
-    sql = "SELECT COUNT(*) FROM students WEHRE grade = 9;"
-    DB[:conn].execute(sql).map do |row|
-      self.new_from_db(row)
-    end
-  end #end the count
+     sql = <<-text
+       SELECT COUNT(*)
+       FROM students
+       WHERE grade = 9;
+    text
+
+     DB[:conn].execute(sql).map do |row|
+       self.new_from_db(row)
+     end
+   end
 
 
   def self.drop_table
