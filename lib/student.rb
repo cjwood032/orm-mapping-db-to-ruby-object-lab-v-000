@@ -78,6 +78,7 @@ def self.students_below_12th_grade
     sql = "SELECT * FROM students WHERE grade = 10 ORDER BY students.id LIMIT ?"
     DB[:conn].execute(sql, number).map do |row|
       self.new_from_db(row)
+    end
   end
 ###################
   def self.drop_table
