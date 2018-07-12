@@ -63,7 +63,7 @@ def self.students_below_12th_grade
    sql = <<-text
      SELECT COUNT(*)
      FROM students
-     WHERE grade < 12;
+     WHERE grade < 12
    text
 
    DB[:conn].execute(sql).map do |row|
