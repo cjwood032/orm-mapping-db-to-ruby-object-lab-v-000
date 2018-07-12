@@ -88,7 +88,7 @@ def self.first_student_in_grade_10
   end.first
 end
 ###################
-def all_students_in_grade_X(grade)
+def self.all_students_in_grade_X(grade)
    sql = <<-text
      SELECT *
      FROM students
